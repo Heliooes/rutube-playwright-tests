@@ -50,6 +50,14 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
+    {
+      name: 'chromium authorized',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'tests/playwright/.auth/user.json',
+      },
+    },
+
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',

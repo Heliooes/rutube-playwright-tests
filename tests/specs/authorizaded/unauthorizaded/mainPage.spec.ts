@@ -27,3 +27,8 @@ test('Клик по кнопке "Вход" ведёт на страницу а�
   await mainPage.clickLoginButton();
   await expect(mainPage.page).toHaveURL(/auth\.gid\.ru/);
 });
+
+test('Проверка доступности элементов раскрытого меню', async ({ mainPage }) => {
+  await mainPage.openFullMenu();
+  await mainPage.fullMenuHasCorrectAriaShapshot();
+});

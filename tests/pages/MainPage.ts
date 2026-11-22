@@ -5,10 +5,10 @@ export class MainPage extends BasePage {
   private readonly categoriesTabsLocator: Locator;
   private readonly menuLocator: Locator;
   private readonly headerAddButtonLocator: Locator;
-  private readonly headerNotificationButtonLocator: Locator;
+  private readonly headerNotificationsButtonLocator: Locator;
   private readonly headerLoginButtonLocator: Locator;
   private readonly headerAddButtonPopupListLocator: Locator;
-  private readonly headerNotificationPopupLocator: Locator;
+  private readonly headerNotificationsPopupLocator: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -16,10 +16,10 @@ export class MainPage extends BasePage {
     this.categoriesTabsLocator = this.page.getByRole('tablist');
     this.menuLocator = this.page.getByRole('navigation', { name: 'Облегченная панель навигации' });
     this.headerAddButtonLocator = this.page.getByRole('button', { name: 'Добавить' });
-    this.headerNotificationButtonLocator = this.page.getByRole('button', { name: 'Уведомления' });
+    this.headerNotificationsButtonLocator = this.page.getByRole('button', { name: 'Уведомления' });
     this.headerLoginButtonLocator = this.page.getByRole('button', { name: 'Вход' });
     this.headerAddButtonPopupListLocator = this.page.getByRole('menu', { name: 'Добавить' });
-    this.headerNotificationPopupLocator = this.page.locator(
+    this.headerNotificationsPopupLocator = this.page.locator(
       '.wdp-notifications-popup-module__wrapper',
     );
   }
@@ -34,5 +34,20 @@ export class MainPage extends BasePage {
   }
   async menuHasCorrectAriaSnapshot() {
     await expect(this.menuLocator).toMatchAriaSnapshot({ name: 'menuSnapshot.yml' });
+  } 
+  async openAddPopupList() {
+    await this.headerAddButtonLocator.click();
+  }
+  async openNotificationsPopUp() {
+    await this.headerNotificationsButtonLocator.click();
+  }
+  async clickLoginButton() {
+    await this.headerLoginButtonLocator.click();
+  }
+  async addPopupListHasCorrectAriaShapshot() {
+    await expect(this.headerAddButtonPopupListLocator).toMatchAriaSnapshot({ name: 'addButtonPopupList.yml' });
+  }
+  async notificationsPopupHasCorrectAriaShapshot() {
+    await expect(this.headerNotificationsPopupLocator).toMatchAriaSnapshot({ name: 'notificationsPopup.yml' });
   }
 }

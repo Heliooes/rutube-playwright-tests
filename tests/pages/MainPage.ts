@@ -11,6 +11,10 @@ export class MainPage extends BasePage {
   private readonly headerNotificationsPopupLocator: Locator;
   private readonly menuButtonLocator: Locator;
   private readonly openMenuAriaLocator: Locator;
+  private readonly openProfileMenuButtonLocator: Locator;
+  private readonly profileMenuLocator: Locator;
+  private readonly changeThemeButtonLocator: Locator;
+  private readonly themeAttributeLocator: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -26,6 +30,14 @@ export class MainPage extends BasePage {
     );
     this.menuButtonLocator = this.page.getByRole('button', { name: 'Открыть меню навигации' });
     this.openMenuAriaLocator = this.page.locator('.menu-content-module__content--open');
+    this.openProfileMenuButtonLocator = this.page.getByRole('button', {
+      name: 'Открыть меню пользователя',
+    });
+    this.profileMenuLocator = this.page.getByRole('dialog', { name: 'Меню пользователя' });
+    this.changeThemeButtonLocator = this.page.getByRole('button', {
+      name: 'Изменить тему оформления',
+    });
+    this.themeAttributeLocator = this.page.locator('html[data-themeid]');
   }
   async open() {
     await this.page.goto('https://rutube.ru/');
@@ -41,6 +53,15 @@ export class MainPage extends BasePage {
   }
   async openFullMenu() {
     await this.menuButtonLocator.click();
+  }
+  async openProfileMenu() {
+    await this.openProfileMenuButtonLocator.click();
+  }
+  async changeTheme() {
+    await this.changeThemeButtonLocator.click();
+  }
+  async getThemeValue(): Promise<string | null> {
+    return this.themeAttributeLocator.getAttribute('data-themeid');
   }
   async headerHasCorrectAriaSnapshot() {
     await expect(this.headerLocator).toMatchAriaSnapshot({ name: 'headerAriaSnapshot.yml' });
@@ -64,6 +85,11 @@ export class MainPage extends BasePage {
   async fullMenuHasCorrectAriaShapshot() {
     await expect(this.openMenuAriaLocator).toMatchAriaSnapshot({
       name: 'fullMenuSnapshot.yml',
+    });
+  }
+  async profileMenuHasCorrectAriaShapshot() {
+    await expect(this.profileMenuLocator).toMatchAriaSnapshot({
+      name: 'profileShapshot.yml',
     });
   }
 }

@@ -39,6 +39,9 @@ export class MainPage extends BasePage {
     });
     this.themeAttributeLocator = this.page.locator('html[data-themeid]');
   }
+
+  // actions
+
   async open() {
     await this.page.goto('https://rutube.ru/');
   }
@@ -60,36 +63,33 @@ export class MainPage extends BasePage {
   async changeTheme() {
     await this.changeThemeButtonLocator.click();
   }
+
+  // getters
   async getThemeValue(): Promise<string | null> {
     return this.themeAttributeLocator.getAttribute('data-themeid');
   }
+
+  // assertions
+
   async headerHasCorrectAriaSnapshot() {
-    await expect(this.headerLocator).toMatchAriaSnapshot({ name: 'headerAriaSnapshot.yml' });
+    await this.checkAriaSnapshot(this.headerLocator, 'headerAriaSnapshot.yml');
   }
   async categoriesTabsHasCorrectAriaSnapshot() {
-    await expect(this.categoriesTabsLocator).toMatchAriaSnapshot({ name: 'categoriesTabs.yml' });
+    await this.checkAriaSnapshot(this.categoriesTabsLocator, 'categoriesTabs.yml');
   }
   async menuHasCorrectAriaSnapshot() {
-    await expect(this.menuLocator).toMatchAriaSnapshot({ name: 'menuSnapshot.yml' });
+    await this.checkAriaSnapshot(this.menuLocator, 'menuSnapshot.yml');
   }
   async addPopupListHasCorrectAriaShapshot() {
-    await expect(this.headerAddButtonPopupListLocator).toMatchAriaSnapshot({
-      name: 'addButtonPopupList.yml',
-    });
+    await this.checkAriaSnapshot(this.headerAddButtonPopupListLocator, 'addButtonPopupList.yml');
   }
   async notificationsPopupHasCorrectAriaShapshot() {
-    await expect(this.headerNotificationsPopupLocator).toMatchAriaSnapshot({
-      name: 'notificationsPopup.yml',
-    });
+    await this.checkAriaSnapshot(this.headerNotificationsPopupLocator, 'notificationsPopup.yml');
   }
   async fullMenuHasCorrectAriaShapshot() {
-    await expect(this.openMenuAriaLocator).toMatchAriaSnapshot({
-      name: 'fullMenuSnapshot.yml',
-    });
+    await this.checkAriaSnapshot(this.openMenuAriaLocator, 'fullMenuSnapshot.yml');
   }
   async profileMenuHasCorrectAriaShapshot() {
-    await expect(this.profileMenuLocator).toMatchAriaSnapshot({
-      name: 'profileShapshot.yml',
-    });
+    await this.checkAriaSnapshot(this.profileMenuLocator, 'profileShapshot.yml');
   }
 }

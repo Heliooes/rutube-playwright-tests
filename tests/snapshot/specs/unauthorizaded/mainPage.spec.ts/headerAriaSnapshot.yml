@@ -1,0 +1,16 @@
+- banner:
+  - button "Открыть меню навигации":
+    - img
+  - button "RUTUBE":
+    - img "RUTUBE"
+  - textbox "Поиск"
+  - button "Отправить форму поиска"
+  - button "Открыть меню": Приложение
+  - button "Добавить":
+    - img
+  - button "Уведомления":
+    - img
+  - button "перейти в безопасный режим":
+    - img
+  - button "Отключить рекламу"
+  - button "Вход"

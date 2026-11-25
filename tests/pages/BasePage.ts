@@ -10,7 +10,8 @@ export class BasePage {
     await expect(locator).toMatchAriaSnapshot({ name: ariaName });
   }
   async closeCookieAlert() {
-    const okButton = this.page.getByRole('button', { name: 'Ок' });
+    const okButton = this.page.getByRole('button', { name: 'Ok', exact: true });
+
     if (await okButton.isVisible({ timeout: 0 })) {
       await okButton.click();
       await this.page.waitForTimeout(300);

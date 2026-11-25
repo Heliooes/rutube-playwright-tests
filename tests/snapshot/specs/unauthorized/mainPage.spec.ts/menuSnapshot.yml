@@ -1,0 +1,69 @@
+- navigation "Облегченная панель навигации":
+  - list:
+    - listitem:
+      - link "Главная":
+        - /url: /
+        - paragraph: Главная
+    - listitem:
+      - link "Каталог":
+        - /url: /categories/
+        - paragraph: Каталог
+    - listitem:
+      - link "Кино и сериалы":
+        - /url: /feeds/movies-serials/
+        - paragraph: Кино и сериалы
+    - listitem:
+      - link "Детям":
+        - /url: /feeds/kids/
+        - paragraph: Детям
+    - listitem:
+      - link "ТВ онлайн":
+        - /url: /feeds/live/
+        - paragraph: ТВ онлайн
+    - listitem:
+      - link "Новости и СМИ":
+        - /url: /feeds/news/
+        - paragraph: Новости и СМИ
+    - listitem:
+      - link "Shorts":
+        - /url: /shorts/?entry_point=3
+        - paragraph: Shorts
+    - listitem:
+      - link "В топе":
+        - /url: /feeds/top/
+        - paragraph: В топе
+    - listitem:
+      - link "Спорт":
+        - /url: /feeds/sport/
+        - paragraph: Спорт
+    - listitem:
+      - link "RUTUBE для блогеров":
+        - /url: /for_creators
+        - paragraph: RUTUBE для блогеров
+  - separator
+  - list:
+    - listitem:
+      - link "Подписки":
+        - /url: /my/subscriptions/
+        - paragraph: Подписки
+    - listitem:
+      - link "История просмотра":
+        - /url: /my/history/
+        - paragraph: История просмотра
+    - listitem:
+      - link "Плейлисты":
+        - /url: /my/playlists/
+        - paragraph: Плейлисты
+    - listitem:
+      - link "Смотреть позже":
+        - /url: /my/future/
+        - paragraph: Смотреть позже
+    - listitem:
+      - link "Комментарии":
+        - /url: /my/comments/
+        - paragraph: Комментарии
+    - listitem:
+      - link "Понравилось":
+        - /url: /my/liked/
+        - paragraph: Понравилось
+  - separator

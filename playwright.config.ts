@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  snapshotPathTemplate: '{testDir}/snapshot/{testFilePath}/{arg}{ext}',
+  snapshotPathTemplate: 'tests/snapshot/{testFilePath}/{arg}{ext}',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -45,16 +45,19 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testDir: 'tests/specs/unauthorized',
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testDir: 'tests/specs/unauthorized',
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testDir: 'tests/specs/unauthorized',
     },
 
     {

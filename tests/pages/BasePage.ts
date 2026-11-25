@@ -11,9 +11,9 @@ export class BasePage {
   }
   async closeCookieAlert() {
     const okButton = this.page.getByRole('button', { name: 'Ок' });
-    await okButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
-    if (await okButton.isVisible().catch(() => false)) {
+    if (await okButton.isVisible({ timeout: 0 })) {
       await okButton.click();
+      await this.page.waitForTimeout(300);
     }
   }
   protected async checkLayoutByScreenshot(locator: Locator, screenshotName: string) {

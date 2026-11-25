@@ -41,6 +41,8 @@
         - /url: /for_creators
         - paragraph: RUTUBE для блогеров
   - separator
+  - paragraph: Подписывайтесь на каналы, комментируйте видео и ставьте реакции
+  - button "Вход"
   - button "Активировать промокод"
   - separator
   - region "Моё":
@@ -83,7 +85,7 @@
     - list "Cкачать приложения":
       - listitem:
         - link "Приложение":
-          - /url: https://redirect.appmetrica.yandex.com/serve/102092958928533372?user_id=83393364&client_id=1795385960900175216&utm_source=rutube.ru&utm_medium=referral&utm_campaign=landing_app
+          - /url: https://redirect.appmetrica.yandex.com/serve/102092958928533372?client_id=1795644095611321311&utm_source=rutube.ru&utm_medium=referral&utm_campaign=landing_app
       - listitem:
         - link "Инструкции для ТВ":
           - /url: https://rutube.ru/app/#about

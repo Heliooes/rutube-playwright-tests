@@ -1,0 +1,14 @@
+- tablist:
+  - tab "Главная" [selected]
+  - tab "PREMIER"
+  - tab "START"
+  - tab "КИОН"
+  - tab "Фильмы"
+  - tab "Сериалы"
+  - tab "Детям"
+  - tab "Музыка"
+  - tab "ТВ онлайн"
+  - tab "Аудиокниги"
+  - tab "Топ-блогеры"
+  - tab "Спорт"
+  - tab "Трансляции"

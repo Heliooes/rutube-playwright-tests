@@ -44,8 +44,10 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
       testDir: 'tests/specs/unauthorized',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
     },
 
     {

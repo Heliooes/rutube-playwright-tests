@@ -9,4 +9,22 @@ export class BasePage {
   protected async checkAriaSnapshot(locator: Locator, ariaName: string) {
     await expect(locator).toMatchAriaSnapshot({ name: ariaName });
   }
+  async closeCookieAlert() {
+    const okButton = this.page.getByRole('button', { name: 'Ок' });
+    await okButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+    if (await okButton.isVisible().catch(() => false)) {
+      await okButton.click();
+    }
+  }
+  protected async checkLayoutByScreenshot(locator: Locator, screenshotName: string) {
+    await expect(locator).toHaveScreenshot(screenshotName);
+  }
+  protected async hideElement(selector: string) {
+    await this.page.evaluate((selector) => {
+      const header = document.querySelector(selector);
+      if (header) {
+        (header as HTMLElement).style.display = 'none';
+      }
+    }, selector);
+  }
 }

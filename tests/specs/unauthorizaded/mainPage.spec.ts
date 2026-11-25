@@ -23,24 +23,24 @@ test('Проверка доступности элементов списка д
   mainPage,
 }) => {
   await mainPage.openAddPopupList();
-  await mainPage.addPopupListHasCorrectAriaShapshot();
+  await mainPage.addPopupListHasCorrectAriaSnapshot();
 });
 
 test('Проверка доступности элементов попапа уведомлений неавторизованного пользователя', async ({
   mainPage,
 }) => {
-  await mainPage.openNotificationsPopUp();
-  await mainPage.notificationsPopupHasCorrectAriaShapshot();
+  await mainPage.openNotificationsPopup();
+  await mainPage.notificationsPopupHasCorrectAriaSnapshot();
 });
 
-test('Клик по кнопке "Вход" ведёт на страницу авторизации', async ({ mainPage }) => {
+test('Клик по кнопке "Вход" ведёт на страницу авторизации', async ({ mainPage, page }) => {
   await mainPage.clickLoginButton();
-  await expect(mainPage.page).toHaveURL(/auth\.gid\.ru/);
+  await expect(page).toHaveURL(/auth\.gid\.ru/);
 });
 
 test('Проверка доступности элементов раскрытого меню неавторизованного пользователя', async ({
   mainPage,
 }) => {
   await mainPage.openFullMenu();
-  await mainPage.fullMenuHasCorrectAriaShapshot();
+  await mainPage.fullMenuHasCorrectAriaSnapshot();
 });

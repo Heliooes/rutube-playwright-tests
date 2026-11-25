@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 export class MainPage extends BasePage {
   private readonly headerLocator: Locator;
@@ -48,7 +48,7 @@ export class MainPage extends BasePage {
   async openAddPopupList() {
     await this.headerAddButtonLocator.click();
   }
-  async openNotificationsPopUp() {
+  async openNotificationsPopup() {
     await this.headerNotificationsButtonLocator.click();
   }
   async clickLoginButton() {
@@ -80,16 +80,16 @@ export class MainPage extends BasePage {
   async menuHasCorrectAriaSnapshot() {
     await this.checkAriaSnapshot(this.menuLocator, 'menuSnapshot.yml');
   }
-  async addPopupListHasCorrectAriaShapshot() {
+  async addPopupListHasCorrectAriaSnapshot() {
     await this.checkAriaSnapshot(this.headerAddButtonPopupListLocator, 'addButtonPopupList.yml');
   }
-  async notificationsPopupHasCorrectAriaShapshot() {
+  async notificationsPopupHasCorrectAriaSnapshot() {
     await this.checkAriaSnapshot(this.headerNotificationsPopupLocator, 'notificationsPopup.yml');
   }
-  async fullMenuHasCorrectAriaShapshot() {
+  async fullMenuHasCorrectAriaSnapshot() {
     await this.checkAriaSnapshot(this.openMenuAriaLocator, 'fullMenuSnapshot.yml');
   }
-  async profileMenuHasCorrectAriaShapshot() {
-    await this.checkAriaSnapshot(this.profileMenuLocator, 'profileShapshot.yml');
+  async profileMenuHasCorrectAriaSnapshot() {
+    await this.checkAriaSnapshot(this.profileMenuLocator, 'profileSnapshot.yml');
   }
 }

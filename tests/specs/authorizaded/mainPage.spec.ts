@@ -8,20 +8,20 @@ test('Проверка доступности элементов хедера а
 test('Проверка доступности элементов попапа уведомлений авторизованного пользователя', async ({
   mainPage,
 }) => {
-  await mainPage.openNotificationsPopUp();
-  await mainPage.notificationsPopupHasCorrectAriaShapshot();
+  await mainPage.openNotificationsPopup();
+  await mainPage.notificationsPopupHasCorrectAriaSnapshot();
 });
 
 test('Проверка доступности элементов раскрытого меню авторизованного пользователя', async ({
   mainPage,
 }) => {
   await mainPage.openFullMenu();
-  await mainPage.fullMenuHasCorrectAriaShapshot();
+  await mainPage.fullMenuHasCorrectAriaSnapshot();
 });
 
 test('Изменение темы', async ({ mainPage }) => {
   await mainPage.openProfileMenu();
-  await mainPage.profileMenuHasCorrectAriaShapshot();
+  await mainPage.profileMenuHasCorrectAriaSnapshot();
 
   const before = await mainPage.getThemeValue();
   await mainPage.changeTheme();

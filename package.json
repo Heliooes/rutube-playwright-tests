@@ -1,9 +1,14 @@
 {
   "name": "rutube-playwright-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "Автотесты для Rutube на Playwright + TypeScript",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:auth": "playwright test --project=\"chromium authorized\"",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
